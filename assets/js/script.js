@@ -1,6 +1,7 @@
 let qr_code_element = $(".qr-code")
 let page_transfer_btn = $(".page-transfer-btn")
 
+
 transfer_page = function(book_name){
 	window.location.href = `book.html?book_name=${encodeURIComponent(book_name)}`
 }
