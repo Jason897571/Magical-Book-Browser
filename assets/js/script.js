@@ -1,6 +1,29 @@
-let qr_code_element = $(".qr-code")
-let page_transfer_btn = $(".page-transfer-btn")
+/* let qr_code_element = $(".qr-code") */
+/* let page_transfer_btn = $(".page-transfer-btn") */
+let modal_sign_in_element = $(".sign-in-modal")
+let modal_sign_in_close_element = $(".sign-in-close")
+let nav_sign_in_element = $("#nav-sign-in")
 
+
+
+// open sign in modal
+open_sign_in_modal = function(){
+	modal_sign_in_element.addClass("is-active")
+}
+//close sign modal
+close_sign_in_modal = function(){
+	modal_sign_in_element.removeClass("is-active")
+}
+
+// add event to open the sign in modal
+nav_sign_in_element.on("click",function(){
+	open_sign_in_modal()
+})
+
+//add event to close the sign in modal
+modal_sign_in_close_element.on("click",function(){
+	close_sign_in_modal()
+})
 
 transfer_page = function(book_name){
 	window.location.href = `book.html?book_name=${encodeURIComponent(book_name)}`
@@ -25,6 +48,6 @@ qr_code_generator = function(info){
 
 }
 
-qr_code_generator("book")
-page_transfer_btn.on("click", function(){transfer_page("Magical Book")})
+/* qr_code_generator("book") */
+/* page_transfer_btn.on("click", function(){transfer_page("Magical Book")}) */
 	

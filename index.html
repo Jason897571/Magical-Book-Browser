@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Magical Book Browser</title>
@@ -25,7 +24,7 @@
                     <a class="navbar-item" href="/index.html">Home</a>
                     <a class="navbar-item" href="#search-bar">Browse</a>
                     <a class="navbar-item" href="#contact-info">About</a>
-                    <a class="navbar-item js-modal-trigger" data-target="sign-in-modal">Hi! Sign In</a>
+                    <a class="navbar-item" id="nav-sign-in">Hi! Sign In</a>
                 </div>
 
             </div>
@@ -63,13 +62,24 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="container">
-                <div class="footer-widget columns is-mobile">
-                    <div class="image is-96x96px column">
-                        <a href="#">
-                            <img src="./Assets/images/logo_02.png" alt="" class="logo">
-                        </a>
+                <div class="footer-widget">
+                    <div>
+                        <div class="image is-96x96px">
+                            <a href="#">
+                                <img src="./Assets/images/logo_02.png" alt="" class="logo">
+                            </a>
+                        </div>
+                        <div>
+                            <div class="image is-96x96px">
+                                <a href="#">
+                                    <img src="https://quickchart.io/qr?text=https://jason897571.github.io/Magical-Book-Browser/&centerImageUrl=https://images.squarespace-cdn.com/content/v1/598a797af5e23155afc4d592/1597998089824-UHZER996H8NB5EYYDFIW/AVI.JPG`" alt="" class="logo">
+                                </a>
+                            </div>
+    
+                        </div>
                     </div>
-                    <div class="footer-widget column is-3">
+
+                    <div class="contact-us">
                         <h2>Contact Us</h2>
                         <ul class="links">
                             <li><a href="mailto:magicalbookbrowser@gmail.com">Email: magicalbookbrowser@gmail.com</a></li>
@@ -79,13 +89,13 @@
                         </ul>
                     </div>
     
-                    <div class="email-form column is-6">
+                    <div class="email-form">
                         <h3>Unlock the magic of books at Magical Book Browser <br>Sign up now for exclusive insights and early access.</h3>
                         <input type="email" id="footer-email" placeholder="Enter your email Address">
                         <input type="submit" value="SIGN UP" id="footer-email-btn">
                     </div>
                     
-                    <div class="follow-us column is-2" id="contact-info">
+                    <div class="follow-us" id="contact-info">
                         <h2>Follow Us</h2>
                         <ul class="columns">
                             <li class="column">
@@ -119,7 +129,7 @@
     </footer>
 
     <!-- modal for sign in -->
-    <div class="modal is-active" id="sign-in-modal">
+    <div class="modal sign-in-modal">
         <div class="modal-background"></div>
         <div class="modal-content">
             <div class="box">
@@ -128,7 +138,7 @@
                     <span class="title">       
                         Sign In
                     </span>
-                    <button class="delete"></button>
+                    <button class="delete sign-in-close"></button>
                 </div>
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
@@ -165,6 +175,13 @@
         
     </div>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
