@@ -1,9 +1,11 @@
 /* let qr_code_element = $(".qr-code") */
-/* let page_transfer_btn = $(".page-transfer-btn") */
+const page_transfer_btn = $(".page-transfer-btn")
 const modal_sign_in_element = $(".sign-in-modal")
 const modal_sign_in_close_element = $(".sign-in-close")
 const nav_sign_in_element = $("#nav-sign-in")
 const search_btn = $("#search-btn")
+const search_input_box = $("#search-box")
+const search_catagory_element = $("#search-category")
 
 
 
@@ -27,11 +29,25 @@ modal_sign_in_close_element.on("click",function(){
 })
 
 
+transfer_page = function(){
+	let input_value = search_input_box.val()
+	search_catagory_element.change(function(){
+		let catagory_value = $(this).val()
+	})
 
+	alert(input_value + " " + catagory_value)
 
-transfer_page = function(book_name){
-	window.location.href = `book.html?book_name=${encodeURIComponent(book_name)}`
+	if(input_value == ""){
+		//TODO need change to modal
+		alert("please input something")
+	}else{
+		// transfer to another page to show result
+		window.location.href = `book.html`
+	}
+	
 }
+
+page_transfer_btn.on("click", function(){transfer_page()})
 
 qr_code_generator = function(info){
 	
@@ -53,5 +69,5 @@ qr_code_generator = function(info){
 }
 
 /* qr_code_generator("book") */
-/* page_transfer_btn.on("click", function(){transfer_page("Magical Book")}) */
+
 	

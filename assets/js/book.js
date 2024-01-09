@@ -4,7 +4,7 @@ let book_author = document.querySelector(".book-author")
 let back_btn = document.querySelector(".back-btn")
 
 // get data from main page
-const url_params = (new URLSearchParams(window.location.search)).get('book_name');
+const url_params = (new URLSearchParams(window.location.search)).get('input_value');
 
 
 
