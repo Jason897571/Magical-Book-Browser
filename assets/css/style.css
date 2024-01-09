@@ -214,3 +214,9 @@ h1 {
 p{
     text-align: center;
 }
+
+/* modal style */
+.delete{
+    position: absolute; right: 10px; top: 10px;
+    background-color: red;
+}
