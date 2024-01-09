@@ -10,18 +10,23 @@ transfer_page = function(book_name){
 
 qr_code_generator = function(info){
 	
-	const url = `https://quickchart.io/qr?text=${encodeURIComponent(info)}&centerImageUrl=https://images.squarespace-cdn.com/content/v1/598a797af5e23155afc4d592/1597998089824-UHZER996H8NB5EYYDFIW/AVI.JPG`;
+	const url = `https://quickchart.io/qr?text=${encodeURIComponent( info)}&centerImageUrl=https://images.squarespace-cdn.com/content/v1/598a797af5e23155afc4d592/1597998089824-UHZER996H8NB5EYYDFIW/AVI.JPG`;
 	const options = {
 		method: 'GET'
-
+         
 	};
+
+	// qr_code_element.attr("src", url)
 
 	fetch(url, options)
 		.then(response => response)
-		.then(response => qr_code_element.attr("src", response.url))
+		.then(response =>{
+			console.log(response);
+			qr_code_element.attr("src", response.url)
+		} )
 
 }
 
-qr_code_generator("https://github.com/Jason897571/Magical-Book-Browser")
+qr_code_generator("book")
 page_transfer_btn.on("click", function(){transfer_page("Magical Book")})
 	
