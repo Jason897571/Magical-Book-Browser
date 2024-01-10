@@ -6,10 +6,12 @@ const nav_sign_in_element = $("#nav-sign-in")
 let book_image = document.querySelector(".book-image")
 let book_name = document.querySelector(".book-name")
 let book_author = document.querySelector(".book-author")
-
+let result_container= document.querySelector(".result-container")
 
 // get data from main page
-const url_params = (new URLSearchParams(window.location.search)).get('input_value');
+const input_value = (new URLSearchParams(window.location.search)).get('input');
+const category_type = (new URLSearchParams(window.location.search)).get('category');
+
 
 
 // open sign in modal
@@ -33,7 +35,7 @@ modal_sign_in_close_element.on("click",function(){
 
 
 // add book name,image, author,catagory below
-show_book = function(image,name,author,catagory){
+display_book = function(image,name,author,catagory){
     book_name.textContent = name;
     book_image.attr("src",image);
     book_author.textContent = author;
@@ -45,3 +47,6 @@ show_book = function(image,name,author,catagory){
 
 
 // need to use book api here
+run_book_api = function(user_input,category_type){
+	// use the api here
+}

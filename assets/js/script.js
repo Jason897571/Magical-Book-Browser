@@ -32,9 +32,6 @@ transfer_page = function(){
 	let input_value = search_input_box.val()
 	let category_value = search_catagory_element.val()
 
-	alert(category_value)
-	
-
 	if(input_value == ""){
 		//TODO need change to modal
 		alert("please input something")
