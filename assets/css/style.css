@@ -3,6 +3,14 @@
     --diamond: #c5fcff;
     --hex: #e4bc7f;
     --brown: rgb(116, 52, 24);
+    --white: rgb(255,255,255);
+    --black: rgb(0, 0, 0);
+    --outer-space: #33393f;
+    --bright-turquoise: #2aefcb;
+    --gin: #e0eae4;
+    --heliotrope: #e866ec;
+    --grey:rgba(233, 233, 233, 0.942);
+
 }
 
 * {
@@ -26,7 +34,7 @@
 }
 
 .header-2 .navbar{
-    background-color: #e4bc7f;
+    background-color: rgb(227, 187, 128);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -165,6 +173,97 @@ h1 {
     background-position-y: -25px;
 }
 
+/* Main Section */
+
+main {
+    width: 96%;
+    margin: 2rem auto;
+}
+
+/*h1 {
+    /* 4rem = 40px (4 * 10px) 
+    font-size: 4rem;
+}*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 2.0rem;
+    margin-right: -2.0rem;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
+}
+
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--heliotrope);
+    border: 2px solid var(--white);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--grey);
+    color: var(--black);
+    border: 2px solid var(--gin);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card:hover,
+  .code-card:hover .card-header {
+    box-shadow: inset 0px 0px 8px var(--brown), 0 0 15px var(--hex);
+}
+
+.code-card .code-block {
+    flex-grow: 1;
+}
+
+.code-card pre {
+    /* set styles to make it so code wraps in <pre> instead of overflowing */
+    white-space: pre-wrap;
+    overflow: auto;
+    tab-size: 4;
+    padding: 1.2rem 1rem;
+    color: var(--gin);
+    border-radius: 8px;
+    /* use linear-gradient() function to create a fading background  */
+    background-image: linear-gradient(
+      rgb(206, 211, 215) 0%,
+      rgba(253, 253, 253, 0.942) 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+.code-card pre:active {
+    user-select: all;
+}
+
+.card-column {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
 /* Footer Section */
 .footer {
     margin: 0;
@@ -175,24 +274,24 @@ h1 {
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex; /* Use flexbox to make the children elements in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line if there's not enough space */
+    justify-content: space-between; /* Space the elements evenly */
+    align-items: center; /* Align items vertically at the center */
     position: relative;
     width: 100%;
-    max-width: 1320px; 
-    margin: 0 auto;
-    padding-top: 40px; 
-    padding-bottom: 0; 
+    max-width: 1320px; /* Set a maximum width for the content */
+    margin: 0 auto; /* Center the content */
+    padding-top: 40px; /* Adjust the top padding to control the height from the top */
+    padding-bottom: 0; /* Set bottom padding to 0 to make it cover the bottom */
     background-color: black;
 }
 
 .footer-widget {
-    flex-basis: calc(25% - 30px); 
-    margin: 0 15px 30px; 
+    flex-basis: calc(25% - 30px); /* Adjust the width of each widget */
+    margin: 0 15px 30px; /* Add margin to create space between widgets */
     padding: 0 12px;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .image {
@@ -203,26 +302,26 @@ h1 {
 .email-form {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    text-align: center; 
+    align-items: center; /* Center the form horizontally */
+    text-align: center; /* Center the text within the form */
     max-width: 600px;
-    margin: 0 auto; 
-    padding: 20px;  
+    margin: 0 auto; /* Center the form within the container */
+    padding: 20px; /* Add padding for better visual appearance */  
 }
 
 .email-form h3 {
     font-size: 17px;
     font-weight: bold;
-    margin-bottom: 15px; 
+    margin-bottom: 15px; /* Add some space below the text */
 }
 
 .email-form input {
     width: 100%;
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /* Add space between input elements */
 }
 
 .level-right {
-    flex-basis: 100%; 
+    flex-basis: 100%; /* Adjust the width of the social icons */
     
     margin-top: -10px;
     transform: translateX(0%);
@@ -251,6 +350,6 @@ h2 {
 }
 
 /*.content {
-    flex-basis: 100%; 
+    flex-basis: 100%; /* Make the copyright text span the entire width
     text-align: center;
 }*/
