@@ -49,4 +49,29 @@ display_book = function(image,name,author,catagory){
 // need to use book api here
 run_book_api = function(user_input,category_type){
 	// use the api here
+    let bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor`
+    fetch(bookApi)
+    .then(response => {
+        // Check the response status code
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // Parse the response as JSON data
+        return response.json();
+      })
+      .then(data => {
+        handleResponse(data)
+      })
 }
+
+function handleResponse(response) {
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      // in production code, item.text should have the HTML entities escaped.
+      result_container.innerHTML += "<br>" + item.volumeInfo.title+"<br>";
+      let image_holder = document.getElementById("image")
+      let image_el = document.createElement('img')
+      image_el.setAttribute("src",item.volumeInfo.imageLinks.thumbnail);
+      image_holder.appendChild(image_el);
+    }
+  }
