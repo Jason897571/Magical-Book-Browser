@@ -48,5 +48,54 @@ display_book = function(image,name,author,catagory){
 
 // need to use book api here
 run_book_api = function(user_input,category_type){
-	// use the api here
+    // use the api here
+    let bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor`
+    fetch(bookApi)
+    .then(response => {
+        // Check the response status code
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // Parse the response as JSON data
+        return response.json();
+      })
+      .then(data => {
+        handleResponse(data)
+      })
 }
+function handleResponse(response) {
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      let bookInfo = {
+        title: item.volumeInfo.title,
+        authors: item.volumeInfo.authors,
+        imageLinks: item.volumeInfo.imageLinks.thumbnail,
+        }
+      // in production code, item.text should have the HTML entities escaped.
+      createBookCard(bookInfo);
+    }
+}
+function createBookCard(bookInfo) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    const image = document.createElement('img');
+    image.src = bookInfo.imageLinks;
+    card.appendChild(image);
+    const title = document.createElement('div');
+    title.classList.add('book-title');
+    title.textContent = bookInfo.title;
+    card.appendChild(title);
+    const author = document.createElement('div');
+    author.classList.add('author');
+    author.textContent = bookInfo.authors;
+    card.appendChild(author);
+    result_container.appendChild(card);
+}
+run_book_api(input_value)
+
+
+
+
+
+
+
