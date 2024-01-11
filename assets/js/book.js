@@ -34,16 +34,6 @@ modal_sign_in_close_element.on("click",function(){
 })
 
 
-// add book name,image, author,catagory below
-display_book = function(image,name,author,catagory){
-    book_name.textContent = name;
-    book_image.attr("src",image);
-    book_author.textContent = author;
-    book_catagory.textContent = catagory;
-    // add more data here
-}
-
-
 // need to use book api here
 run_book_api = function(user_input,category_type){
     // use the api here
@@ -56,7 +46,8 @@ run_book_api = function(user_input,category_type){
     else if(category_type=="genre"){
       var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+subject&maxResults=40`
     }
-      fetch(bookApi)
+
+    fetch(bookApi)
     .then(response => {
         // Check the response status code
         if (!response.ok) {
