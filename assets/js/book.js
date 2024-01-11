@@ -1,16 +1,15 @@
 const modal_sign_in_element = $(".sign-in-modal")
 const modal_sign_in_close_element = $(".sign-in-close")
 const nav_sign_in_element = $("#nav-sign-in")
-
-
+const page_transfer_btn = $(".page-transfer-btn");
+const search_input_box = $("#search-box");
+const search_catagory_element = $("#search-category");
+const footer_email_btn = $("#footer-email-btn");
 let book_image = document.querySelector(".book-image")
 let book_name = document.querySelector(".book-name")
 let book_author = document.querySelector(".book-author")
 let result_container= $(".result-container")
 
-// get data from main page
-const input_value = (new URLSearchParams(window.location.search)).get('input');
-const category_type = (new URLSearchParams(window.location.search)).get('category');
 
 
 
@@ -31,6 +30,29 @@ nav_sign_in_element.on("click",function(){
 //add event to close the sign in modal
 modal_sign_in_close_element.on("click",function(){
 	close_sign_in_modal()
+})
+
+footer_email_btn.on("click",function(){
+	open_sign_in_modal();
+})
+
+transfer_page = function(){
+	let input_value = search_input_box.val();
+	let category_value = search_catagory_element.val();
+
+	if(input_value == ""){
+		//popping up a modal
+		open_search_warning_modal();
+	}else{
+		// transfer to another page to show result
+		window.location.href = `book.html?input=${encodeURIComponent(input_value)}&category=${encodeURIComponent(category_value)}`
+	}
+	
+}
+
+page_transfer_btn.on("click", function(event){
+	event.preventDefault();
+	transfer_page();
 })
 
 
@@ -63,12 +85,15 @@ run_book_api = function(user_input,category_type){
 
 
 function handleResponse(response) {
+  console.log(response);
     for (var i = 0; i < response.items.length; i++) {
       var item = response.items[i];
       let bookInfo = {
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors,
         imageLinks: item.volumeInfo.imageLinks.thumbnail,
+        description: item.volumeInfo.description,
+        infoLink:item.volumeInfo.infoLink,
         }
       // in production code, item.text should have the HTML entities escaped.
       createBookCard(bookInfo);
@@ -97,28 +122,30 @@ function createBookCard(bookInfo) {
   card_image.attr("src", bookInfo.imageLinks)
   card_image.attr("alt", "book logo")
   card_pre.append(card_image)
+  //create book info holder
+  const book_info = $("<div></div>")
+  book_info.addClass("book-info")
+  card_pre.append(book_info)
   //create author info
   const card_author = $("<p></p>")
   card_author.text("Author: " + bookInfo.authors)
   card_author.addClass("card-author")
-  card_pre.append(card_author)
+  book_info.append(card_author)
+
+  //create more info button
+  const more_info_btn = $("<button>More Info</button>");
+  more_info_btn.addClass("more-info-btn");
+  book_info.append(more_info_btn);
+  more_info_btn.on("click", function(){
+    window.location.href = bookInfo.infoLink;
+  })
 
 
+  
 
-
- /*  const card = document.createElement('div');
-  card.classList.add('card');
-  const image = document.createElement('img');
-  image.src = bookInfo.imageLinks;
-  card.appendChild(image);
-  const title = document.createElement('div');
-  title.classList.add('book-title');
-  title.textContent = bookInfo.title;
-  card.appendChild(title);
-  const author = document.createElement('div');
-  author.classList.add('author');
-  author.textContent = bookInfo.authors;
-  card.appendChild(author);
-  result_container.appendChild(card); */
 }
+
+// get data from main page
+const input_value = (new URLSearchParams(window.location.search)).get('input');
+const category_type = (new URLSearchParams(window.location.search)).get('category');
 run_book_api(input_value,category_type)

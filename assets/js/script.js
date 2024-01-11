@@ -1,4 +1,3 @@
-/* let qr_code_element = $(".qr-code") */
 const page_transfer_btn = $(".page-transfer-btn");
 const modal_sign_in_element = $(".sign-in-modal");
 const modal_sign_in_close_element = $(".sign-in-close");
@@ -65,11 +64,6 @@ page_transfer_btn.on("click", function(event){
 	transfer_page();
 })
 
-function isValidEmail(email) {
-    // check if the email is valid
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(email);
-}
 
 qr_code_generator = function(info){
 	
