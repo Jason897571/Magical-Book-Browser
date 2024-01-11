@@ -88,4 +88,4 @@ function createBookCard(bookInfo) {
     card.appendChild(author);
     result_container.appendChild(card);
 }
-run_book_api(input_value)
+run_book_api(input_value,category_type)
