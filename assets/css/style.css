@@ -1,4 +1,4 @@
-
+/*Root Elements*/
 :root{
     --diamond: #c5fcff;
     --hex: #e4bc7f;
@@ -8,8 +8,9 @@
     --outer-space: #33393f;
     --bright-turquoise: #2aefcb;
     --gin: #e0eae4;
-    --heliotrope: #e866ec;
+    --blue: rgb(169, 206, 238);
     --grey:rgba(233, 233, 233, 0.942);
+    --skyBlue: rgb(225, 235, 244);
 
 }
 
@@ -70,8 +71,11 @@
     color: hsl(252, 30%, 17%);
     border-radius: 5px;
     box-sizing: border-box;
-    height: 100%;
+    height: 35px;
     
+}
+.search-form input[type="search"]:hover {
+    box-shadow: 0 2px 5px #33393f;
 }
 
 #search-btn {
@@ -150,6 +154,18 @@ h1 {
     background-position-y: -25px;
 }
 
+.text {
+    font-size: 26px;
+    font-weight: 500;
+    position:inherit;
+    text-decoration:none;
+    font-family:  Georgia, serif;
+    font-weight: bold;
+    color: brown;
+    margin-top: -80px;
+    padding-left: 50px;
+}
+
 /* Main Section */
 
 main {
@@ -157,17 +173,19 @@ main {
     margin: 2rem auto;
 }
 
-/*h1 {
-    /* 4rem = 40px (4 * 10px) 
-    font-size: 4rem;
-}*/
+.code-block {
+    background-size: cover;
+}
 
 .row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin-left: 2.0rem;
-    margin-right: -2.0rem;
+    /*margin-left: 2.0rem;*/
+    /*margin-right: -2.0rem;*/
+    /*margin: 0 auto;*/
+    position: relative;
+    margin-top: -40px;
 }
 
 .justify-center {
@@ -177,9 +195,9 @@ main {
 .card-column {
     flex: 1 0 100%;
     padding: 1.5rem;
-    /* when the screen resizes, make it so our columns don't jump in size */
     transition: flex-basis 500ms linear;
     margin-bottom: 1.5rem;
+    width: 80%;
 }
 
 .code-card {
@@ -188,27 +206,43 @@ main {
     justify-content: flex-start;
     min-height: 100%;
     padding: 2rem;
-    color: var(--heliotrope);
+    /*color: var(--heliotrope);*/
     border: 2px solid var(--white);
     outline-offset: -2px;
     transition: all 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .code-card .card-header {
-    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
     position: relative;
     margin: -4rem 0 1.5rem 0;
     padding: 0.5rem 1rem;
-    background-color: var(--grey);
+    background-color: var(--skyBlue);
     color: var(--black);
     border: 2px solid var(--gin);
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
+    justify-content: center;
+    font-weight: bold;
+    color:var(--outer-space);
 }
 
 .code-card:hover,
   .code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px var(--brown), 0 0 15px var(--hex);
+    box-shadow: inset 0px 0px 8px var(--outer-space), 0 0 15px var(--outer-space);
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .code-card .code-block {
@@ -216,14 +250,12 @@ main {
 }
 
 .code-card pre {
-    /* set styles to make it so code wraps in <pre> instead of overflowing */
     white-space: pre-wrap;
     overflow: auto;
     tab-size: 4;
     padding: 1.2rem 1rem;
     color: var(--gin);
     border-radius: 8px;
-    /* use linear-gradient() function to create a fading background  */
     background-image: linear-gradient(
       rgb(206, 211, 215) 0%,
       rgba(253, 253, 253, 0.942) 100%
@@ -237,8 +269,18 @@ main {
 }
 
 .card-column {
-    flex: 0 0 33.333%;
+    flex: 2 0 33.333%;
     max-width: 33.333%;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    height: 15em;
+}
+
+@media (max-width: 768px) {
+    .card-column {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
 }
 
 /* Footer Section */
@@ -266,7 +308,6 @@ main {
     box-sizing: border-box; 
 }
 
-
 .image {
     max-width: 200px;     
     
@@ -283,16 +324,48 @@ main {
 .email-form h3 {
     font-size: 17px;
     font-weight: bold;
-    margin-bottom: 15px; /* Add some space below the text */
+    margin-bottom: 15px; 
 }
 
 .email-form input {
     width: 100%;
-    margin-bottom: 10px; /* Add space between input elements */
+    margin-bottom: 10px; 
+    height: 40px;
+    border-radius: 5px;
+}
+
+.email-form input:hover {
+    box-shadow: 0 2px 5px rgba(233, 233, 233, 0.942);
+    background-color:aliceblue;
+
+}
+
+#footer-email-btn {
+    width:20%;
+    height: 30px;
+    font-weight: bold;
+}
+
+#footer-email-btn:hover {
+    box-shadow: 0 2px 5px rgba(233, 233, 233, 0.942);
+    background-color:#e4bc7f;
+}
+
+#footer-email {
+    text-align:center;
 }
 
 .contact-us{
     margin: 0px 30px;
+    text-align: center;
+}
+
+.links a {
+    color: white;
+}
+
+.links a:hover {
+    color:var(--hex);
 }
 
 .follow-us{
