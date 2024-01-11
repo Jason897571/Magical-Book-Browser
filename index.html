@@ -43,9 +43,9 @@
                     <input type="search" name="" placeholder=" Search by Books, Authors, or Genre..." id="search-box">
                     <div class="select is-link is-small">
                         <select id="search-category">
-                            <option value="book-name">By Book Name</option>
-                            <option value="author">By Author Name</option>
-                            <option value="genre">By Genre</option>
+                            <option value="intitle">By Book Name</option>
+                            <option value="inauthor">By Author Name</option>
+                            <option value="subject">By Genre</option>
                         </select>
                     </div>
                     <button type="submit" id="search-btn" class="button is-link is-small page-transfer-btn fa fa-search "></button>
@@ -267,6 +267,18 @@
         </div>
         
     </div>
+
+    <div class="modal search-warning-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <p>Your input is empty</p>
+                <button class="delete search-warning-close"></button>
+            </div>
+          
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
 
 
 
