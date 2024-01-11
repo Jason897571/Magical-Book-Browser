@@ -44,13 +44,21 @@ display_book = function(image,name,author,catagory){
 }
 
 
-
-
 // need to use book api here
 run_book_api = function(user_input,category_type){
-    // use the api here
-    let bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor`
-    fetch(bookApi)
+  // use the api here
+  if(category_type=="inauthor"){
+    var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor&maxResults=40`
+  }
+  else if(category_type=="intitle"){
+    var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+intitle&maxResults=40`
+  }
+  else if(category_type=="subject"){
+    var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+subject&maxResults=40`
+  }
+
+ 
+  fetch(bookApi)
     .then(response => {
         // Check the response status code
         if (!response.ok) {
@@ -63,6 +71,8 @@ run_book_api = function(user_input,category_type){
         handleResponse(data)
       })
 }
+
+
 function handleResponse(response) {
     for (var i = 0; i < response.items.length; i++) {
       var item = response.items[i];
@@ -91,7 +101,7 @@ function createBookCard(bookInfo) {
     card.appendChild(author);
     result_container.appendChild(card);
 }
-run_book_api(input_value)
+run_book_api(input_value,category_type)
 
 
 

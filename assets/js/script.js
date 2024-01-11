@@ -1,50 +1,54 @@
 /* let qr_code_element = $(".qr-code") */
-const page_transfer_btn = $(".page-transfer-btn")
-const modal_sign_in_element = $(".sign-in-modal")
-const modal_sign_in_close_element = $(".sign-in-close")
-const modal_search_warning_element = $(".search-warning-close")
-const nav_sign_in_element = $("#nav-sign-in")
-const search_btn = $("#search-btn")
-const search_input_box = $("#search-box")
-const search_catagory_element = $("#search-category")
-
+const page_transfer_btn = $(".page-transfer-btn");
+const modal_sign_in_element = $(".sign-in-modal");
+const modal_sign_in_close_element = $(".sign-in-close");
+const modal_search_warning_element = $(".search-warning-close");
+const nav_sign_in_element = $("#nav-sign-in");
+const search_btn = $("#search-btn");
+const search_input_box = $("#search-box");
+const search_catagory_element = $("#search-category");
+const footer_email_btn = $("#footer-email-btn");
 
 // open sign in modal
 open_sign_in_modal = function(){
-	modal_sign_in_element.addClass("is-active")
+	modal_sign_in_element.addClass("is-active");
 }
 //close sign modal
 close_sign_in_modal = function(){
-	modal_sign_in_element.removeClass("is-active")
+	modal_sign_in_element.removeClass("is-active");
 }
 
 open_search_warning_modal = function(){
-	$(".search-warning-modal").addClass("is-active")
+	$(".search-warning-modal").addClass("is-active");
 }
 
 close_search_warning_modal = function(){
-	$(".search-warning-modal").removeClass("is-active")
+	$(".search-warning-modal").removeClass("is-active");
 }
 
 // add event to open the sign in modal
 nav_sign_in_element.on("click",function(){
-	open_sign_in_modal()
+	open_sign_in_modal();
 })
 
 //add event to close the sign in modal
 modal_sign_in_close_element.on("click",function(){
-	close_sign_in_modal()
+	close_sign_in_modal();
 })
 
 modal_search_warning_element.on("click",function(){
-	close_search_warning_modal()
+	close_search_warning_modal();
+})
+
+footer_email_btn.on("click",function(){
+	open_sign_in_modal();
 })
 
 
 
 transfer_page = function(){
-	let input_value = search_input_box.val()
-	let category_value = search_catagory_element.val()
+	let input_value = search_input_box.val();
+	let category_value = search_catagory_element.val();
 
 	if(input_value == ""){
 		//popping up a modal
@@ -58,8 +62,14 @@ transfer_page = function(){
 
 page_transfer_btn.on("click", function(event){
 	event.preventDefault();
-	transfer_page()
+	transfer_page();
 })
+
+function isValidEmail(email) {
+    // check if the email is valid
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email);
+}
 
 qr_code_generator = function(info){
 	
@@ -73,7 +83,7 @@ qr_code_generator = function(info){
 		.then(response => response)
 		.then(response =>{
 			console.log(response);
-			qr_code_element.attr("src", response.url)
+			qr_code_element.attr("src", response.url);
 		} )
 
 }
