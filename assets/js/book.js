@@ -34,22 +34,19 @@ modal_sign_in_close_element.on("click",function(){
 })
 
 
-// add book name,image, author,catagory below
-display_book = function(image,name,author,catagory){
-    book_name.textContent = name;
-    book_image.attr("src",image);
-    book_author.textContent = author;
-    book_catagory.textContent = catagory;
-    // add more data here
-}
-
-
-
-
 // need to use book api here
 run_book_api = function(user_input,category_type){
     // use the api here
-    let bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor`
+    if(category_type=="author"){
+      var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor&maxResults=40`
+    }
+    else if(category_type=="book-name"){
+      var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+intitle&maxResults=40`
+    }
+    else if(category_type=="genre"){
+      var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+subject&maxResults=40`
+    }
+
     fetch(bookApi)
     .then(response => {
         // Check the response status code
@@ -91,11 +88,4 @@ function createBookCard(bookInfo) {
     card.appendChild(author);
     result_container.appendChild(card);
 }
-run_book_api(input_value)
-
-
-
-
-
-
-
+run_book_api(input_value,category_type)
