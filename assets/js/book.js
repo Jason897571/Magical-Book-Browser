@@ -9,7 +9,15 @@ let book_image = document.querySelector(".book-image")
 let book_name = document.querySelector(".book-name")
 let book_author = document.querySelector(".book-author")
 let result_container= $(".result-container")
+const warning_text_element = $(".warning");
 const qr_code_element = $(".qr-code");
+
+// sign in modal
+const sign_up_email_element = $("#email");
+const sign_up_password_element = $("#password");
+const sign_up_btn_element = $("#sign-up-btn");
+const sign_in_btn_element = $("#sign-in-btn");
+
 const demo_link = "https://jason897571.github.io/Magical-Book-Browser/"
 
 
@@ -82,17 +90,19 @@ run_book_api = function(user_input,category_type){
       .then(data => {
         handleResponse(data)
       })
-}
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+};
 
 
 function handleResponse(response) {
-  console.log(response);
     for (var i = 0; i < response.items.length; i++) {
       var item = response.items[i];
       let bookInfo = {
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors,
-        imageLinks: item.volumeInfo.imageLinks.thumbnail,
+        imageLinks: item.volumeInfo.imageLinks?.thumbnail,
         description: item.volumeInfo.description,
         infoLink:item.volumeInfo.infoLink,
         }
@@ -157,11 +167,92 @@ qr_code_generator = function(info){
 	fetch(url, options)
 		.then(response => response)
 		.then(response =>{
-			console.log(response);
 			qr_code_element.attr("src", response.url);
 		} )
 
 }
+
+//check if localstorage is empty
+is_localstorage_available = function(){
+	let user_data = JSON.parse(localStorage.getItem("user-data"))
+	if(user_data === null){
+		return false;
+	}
+	else{
+		return true;
+	}
+		
+	
+};
+
+//check if there is matched user in localstorage
+function check_user_credentials(input_email, input_password, user_data_list) {
+    for (let i = 0; i < user_data_list.length; i++) {
+        let user = user_data_list[i];
+        if (user.email === input_email && user.password === input_password) {
+            return true; // Match found
+        }
+    }
+    return false; // No match found
+}
+
+sign_up = function(){
+	// get input from user 
+	let email_text = sign_up_email_element.val();
+	let password_text = sign_up_password_element.val();
+
+	//validate if it is empty
+	if(email_text === "" || password_text === ""){
+		warning_text_element.text("Please Fill In All Fields");
+		return;
+	}
+	else{
+		let user_data = {"email":email_text, "password":password_text}
+
+		// if there are historical sign in data
+		if (is_localstorage_available) {
+            let storedData = localStorage.getItem("user-data");
+            let user_data_list = JSON.parse(storedData);
+            user_data_list.push(user_data);
+            localStorage.setItem("user-data", JSON.stringify(user_data_list));
+        } else {
+            localStorage.setItem("user-data", JSON.stringify([user_data])); // Store as an array for consistency
+        }
+
+		close_sign_in_modal();
+
+		nav_sign_in_element.text(`Hi! ${email_text}`);
+		
+	}
+	
+	
+}
+
+sign_in = function(){
+	let email_text = sign_up_email_element.val();
+	let password_text = sign_up_password_element.val();
+	let user_data = JSON.parse(localStorage.getItem("user-data"));
+	let is_user = check_user_credentials(email_text, password_text,user_data)
+
+	if(is_user){
+		close_sign_in_modal();
+
+		nav_sign_in_element.text(`Hi! ${email_text}`);
+	}else{
+		warning_text_element.text("Your Email or Password Are Incorrect");
+		return;
+	}
+
+}
+
+sign_up_btn_element.on("click", function(){
+	sign_up();
+} )
+
+sign_in_btn_element.on("click", function(){
+	sign_in();
+} )
+
 
 qr_code_generator(demo_link)
 
