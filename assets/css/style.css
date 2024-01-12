@@ -218,8 +218,9 @@ main {
 
 .result-container .card-column {
     flex: 1 0 cal(33.333% - 2rem);
-    margin: 3.5rem;
+    margin: 4.5rem;
     box-sizing: border-box;
+
 }
 
 @media (max-width: 768px) {
@@ -533,10 +534,23 @@ p{
 }
 
 .result-body{
-    /*background-color: lightcyan;*/
-    background-color: rgba(241, 241, 241, 0.942);
+    background-color: rgba(216, 224, 230, 0.942);
 }
 
 .warning{
     color: red;
+}
+
+.book-info{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+.more-info-btn{
+    margin-top: 40px;
+    border-radius: 95px;
+}
+
+.more-info-btn:hover{
+    background-color: #e4bc7f;
 }

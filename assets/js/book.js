@@ -133,7 +133,7 @@ function createBookCard(bookInfo) {
   //create card image
   const card_image = $("<img></img>")
   card_image.attr("src", bookInfo.imageLinks)
-  card_image.attr("alt", "book logo")
+  card_image.attr("alt", "Image Not Avaliable")
   card_pre.append(card_image)
   //create book info holder
   const book_info = $("<div></div>")
