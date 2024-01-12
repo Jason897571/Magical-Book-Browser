@@ -92,7 +92,7 @@ function handleResponse(response) {
       let bookInfo = {
         title: item.volumeInfo.title,
         authors: item.volumeInfo.authors,
-        imageLinks: item.volumeInfo.imageLinks.thumbnail,
+        imageLinks: item.volumeInfo.imageLinks?.thumbnail,
         description: item.volumeInfo.description,
         infoLink:item.volumeInfo.infoLink,
         }
