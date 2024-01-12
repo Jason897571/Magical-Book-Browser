@@ -65,15 +65,15 @@ page_transfer_btn.on("click", function(event){
 })
 
 
-// need to use book api here
+// book api application here
 run_book_api = function(user_input,category_type){
-    // use the api here
+    // by author
     if(category_type=="inauthor"){
       var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+inauthor&maxResults=40`
-    }
+    }//by book name
     else if(category_type=="intitle"){
       var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+intitle&maxResults=40`
-    }
+    }// by subject
     else if(category_type=="subject"){
       var bookApi = `https://www.googleapis.com/books/v1/volumes?q=${user_input}+subject&maxResults=40`
     }
@@ -95,7 +95,7 @@ run_book_api = function(user_input,category_type){
     });
 };
 
-
+// extract data from api
 function handleResponse(response) {
     for (var i = 0; i < response.items.length; i++) {
       var item = response.items[i];
@@ -110,6 +110,8 @@ function handleResponse(response) {
       createBookCard(bookInfo);
     }
 }
+
+// dynamically generates results cards
 function createBookCard(bookInfo) {
   // create card holder
   const card_column = $("<div></div>")
@@ -196,6 +198,7 @@ function check_user_credentials(input_email, input_password, user_data_list) {
     return false; // No match found
 }
 
+// user sign up
 sign_up = function(){
 	// get input from user 
 	let email_text = sign_up_email_element.val();
@@ -228,6 +231,7 @@ sign_up = function(){
 	
 }
 
+// user sign in
 sign_in = function(){
 	let email_text = sign_up_email_element.val();
 	let password_text = sign_up_password_element.val();

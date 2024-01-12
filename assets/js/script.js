@@ -12,7 +12,7 @@ const qr_code_element = $(".qr-code");
 const warning_text_element = $(".warning");
 
 
-//modal element
+//modal elements
 const sign_up_email_element = $("#email");
 const sign_up_password_element = $("#password");
 const sign_up_btn_element = $("#sign-up-btn");
@@ -28,11 +28,11 @@ open_sign_in_modal = function(){
 close_sign_in_modal = function(){
 	modal_sign_in_element.removeClass("is-active");
 }
-
+// open searching warning modal for empty input
 open_search_warning_modal = function(){
 	$(".search-warning-modal").addClass("is-active");
 }
-
+// close searching warning modal for empty input
 close_search_warning_modal = function(){
 	$(".search-warning-modal").removeClass("is-active");
 }
@@ -55,7 +55,7 @@ footer_email_btn.on("click",function(){
 	open_sign_in_modal();
 })
 
-
+// transfer to book.html and pass params
 transfer_page = function(){
 	let input_value = search_input_box.val();
 	let category_value = search_catagory_element.val();
@@ -103,6 +103,8 @@ qr_code_generator = function(info){
 
 }
 
+qr_code_generator(demo_link);
+
 //check if localstorage is empty
 is_localstorage_available = function(){
 	let user_data = JSON.parse(localStorage.getItem("user-data"))
@@ -127,7 +129,7 @@ function check_user_credentials(input_email, input_password, user_data_list) {
     return false; // No match found
 }
 
-
+// user sign up
 sign_up = function(){
 	// get input from user 
 	let email_text = sign_up_email_element.val();
@@ -159,7 +161,7 @@ sign_up = function(){
 	
 	
 }
-
+// user sign in
 sign_in = function(){
 	let email_text = sign_up_email_element.val();
 	let password_text = sign_up_password_element.val();
@@ -186,5 +188,4 @@ sign_in_btn_element.on("click", function(){
 } )
 
 
-qr_code_generator(demo_link);
 	
