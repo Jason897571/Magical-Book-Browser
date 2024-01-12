@@ -51,11 +51,11 @@
 
 <p><strong>Start Page</strong></p>
 
-![Alt text](./assets/img/start.png)
+![Alt text](./assets/images/web_cover.png)
 
 <br />
 
-The web is used to search the weather for any cities all over the world. It includes current weather and 5-day forcasting weather. 
+The web is used to search 
 
 
 
@@ -63,11 +63,10 @@ The web is used to search the weather for any cities all over the world. It incl
 <a id="#built-with"></a>
 ## Built with
 This Quiz is built with HTML, CSS and Javascript.
-* [![Alt text](./assets/img/html.png)][HTML-url]
-* [![Alt text](./assets/img/css.png)][CSS-url]
-* [![Alt text](./assets/img/javascript.png)][Javascript-url]
-* [![Alt text](./assets/img/Bootstrap.png)][BootStrap-url]
-* [![Alt text](./assets/img/jQuery.png)][jQuery-url]
+* [![Alt text](./assets/images/html.png)][HTML-url]
+* [![Alt text](./assets/images/css.png)][CSS-url]
+* [![Alt text](./assets/images/javascript.png)][Javascript-url]
+* [![Alt text](./assets/images/jQuery.png)][jQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,10 +83,10 @@ You should have your shell ready for downloading this project. We use gitbash as
 
 <a id="installation"></a>
 ### Installation
-1. Get a free API Key at [github](https://github.com/Jason897571/weather-research#built-with)
+1. Get a free API Key at [github](https://github.com/Jason897571/Magical-Book-Browser#built-with)
 2. Clone the repo
    ```sh
-   git clone https://github.com/Jason897571/weather-research.git
+   git clone https://github.com/Jason897571/Magical-Book-Browser.git
    ```
 3. Open the project using vs code and run it in browser
 
@@ -131,8 +130,11 @@ For more details, please refer to the [Documentation](https://github.com/Jason89
 ## Contact
 
 Jason Gu - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
+Salvatore Mammoliti - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
+Muniba Pervez - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
 
-Project Link: [https://github.com/Jason897571/weather-research](https://github.com/Jason897571/Magical-Book-Browser)
+
+Project Link: [https://github.com/Jason897571/Magical-Book-Browser](https://github.com/Jason897571/Magical-Book-Browser)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
