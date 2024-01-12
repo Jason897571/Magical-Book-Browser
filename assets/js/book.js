@@ -9,7 +9,8 @@ let book_image = document.querySelector(".book-image")
 let book_name = document.querySelector(".book-name")
 let book_author = document.querySelector(".book-author")
 let result_container= $(".result-container")
-
+const qr_code_element = $(".qr-code");
+const demo_link = "https://jason897571.github.io/Magical-Book-Browser/"
 
 
 
@@ -144,6 +145,25 @@ function createBookCard(bookInfo) {
   
 
 }
+
+qr_code_generator = function(info){
+	
+	const url = `https://quickchart.io/qr?text=${encodeURIComponent(info)}&centerImageUrl=https://cdn2.iconfinder.com/data/icons/magic-and-fairy-tale/512/Magic_Book-512.png`;
+	const options = {
+		method: 'GET'
+         
+	};
+
+	fetch(url, options)
+		.then(response => response)
+		.then(response =>{
+			console.log(response);
+			qr_code_element.attr("src", response.url);
+		} )
+
+}
+
+qr_code_generator(demo_link)
 
 // get data from main page
 const input_value = (new URLSearchParams(window.location.search)).get('input');
