@@ -7,6 +7,9 @@ const search_btn = $("#search-btn");
 const search_input_box = $("#search-box");
 const search_catagory_element = $("#search-category");
 const footer_email_btn = $("#footer-email-btn");
+const subject_demo_element = $(".subject-demo");
+const qr_code_element = $(".qr-code");
+const demo_link = "https://jason897571.github.io/Magical-Book-Browser/"
 
 // open sign in modal
 open_sign_in_modal = function(){
@@ -34,15 +37,14 @@ nav_sign_in_element.on("click",function(){
 modal_sign_in_close_element.on("click",function(){
 	close_sign_in_modal();
 })
-
+//add event to close the search warning modal
 modal_search_warning_element.on("click",function(){
 	close_search_warning_modal();
 })
-
+// footer sign up button function
 footer_email_btn.on("click",function(){
 	open_sign_in_modal();
 })
-
 
 
 transfer_page = function(){
@@ -59,6 +61,16 @@ transfer_page = function(){
 	
 }
 
+// transfer to result page to show demo subject
+subject_demo_element.on("click",function(event){
+	let target = event.target;
+	if(target.classList.contains("code-card")){
+		
+		let topic = target.querySelector("h2.card-header").innerText;
+		window.location.href = `book.html?input=${encodeURIComponent(topic)}&category=subject`
+	}
+});
+
 page_transfer_btn.on("click", function(event){
 	event.preventDefault();
 	transfer_page();
@@ -67,7 +79,7 @@ page_transfer_btn.on("click", function(event){
 
 qr_code_generator = function(info){
 	
-	const url = `https://quickchart.io/qr?text=${encodeURIComponent(info)}&centerImageUrl=https://images.squarespace-cdn.com/content/v1/598a797af5e23155afc4d592/1597998089824-UHZER996H8NB5EYYDFIW/AVI.JPG`;
+	const url = `https://quickchart.io/qr?text=${encodeURIComponent(info)}&centerImageUrl=https://cdn2.iconfinder.com/data/icons/magic-and-fairy-tale/512/Magic_Book-512.png`;
 	const options = {
 		method: 'GET'
          
@@ -82,5 +94,5 @@ qr_code_generator = function(info){
 
 }
 
-
+qr_code_generator(demo_link)
 	

@@ -107,7 +107,6 @@
   
     &::before,
     &::after {
-      content: open-quote;
       font-size: 2.4em;
       color: aqua;
       position: absolute;
@@ -329,6 +328,7 @@ main {
     transition: flex-basis 500ms linear;
     margin-bottom: 1.5rem;
     width: 80%;
+    
 }
 
 .code-card {
@@ -358,11 +358,13 @@ main {
     justify-content: center;
     font-weight: bold;
     color:var(--outer-space);
+    
 }
 
 .code-card:hover,
-  .code-card:hover .card-header {
+.code-card:hover .card-header {
     box-shadow: inset 0px 0px 8px var(--outer-space), 0 0 15px var(--outer-space);
+    cursor: pointer;
 }
 
 .card-body {
