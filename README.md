@@ -51,23 +51,23 @@
 
 <p><strong>Start Page</strong></p>
 
-![Alt text](./assets/img/start.png)
+![Alt text](./assets/images/web_cover.png)
 
 <br />
 
-The web is used to search the weather for any cities all over the world. It includes current weather and 5-day forcasting weather. 
+It offers a wide range of genres including Fiction, Science Fiction, Young Adult Fiction, Fantasy, Horror, Crime & Thriller, Children's Literature, and Biographies. <br />The site appears to be designed for book enthusiasts, offering ways to explore and discover books by name, author, or genre. <br />It also provides contact information, including an email address, phone number, and physical address. Additionally, the site encourages visitors to sign up for exclusive insights and early access, and it has options for users to sign in or sign up.  
 
 
 
 
 <a id="#built-with"></a>
 ## Built with
-This Quiz is built with HTML, CSS and Javascript.
-* [![Alt text](./assets/img/html.png)][HTML-url]
-* [![Alt text](./assets/img/css.png)][CSS-url]
-* [![Alt text](./assets/img/javascript.png)][Javascript-url]
-* [![Alt text](./assets/img/Bootstrap.png)][BootStrap-url]
-* [![Alt text](./assets/img/jQuery.png)][jQuery-url]
+This Project is built with HTML, CSS, Javascript, JQuery and Bulma.
+* [![Alt text](./assets/images/html.png)][HTML-url]
+* [![Alt text](./assets/images/css.png)][CSS-url]
+* [![Alt text](./assets/images/javascript.png)][Javascript-url]
+* [![Alt text](./assets/images/jQuery.png)][jQuery-url]
+* ![Alt text](./assets/images/bulma-logo.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,10 +84,10 @@ You should have your shell ready for downloading this project. We use gitbash as
 
 <a id="installation"></a>
 ### Installation
-1. Get a free API Key at [github](https://github.com/Jason897571/weather-research#built-with)
+1. Get a free API Key at [github](https://github.com/Jason897571/Magical-Book-Browser#built-with)
 2. Clone the repo
    ```sh
-   git clone https://github.com/Jason897571/weather-research.git
+   git clone https://github.com/Jason897571/Magical-Book-Browser.git
    ```
 3. Open the project using vs code and run it in browser
 
@@ -102,15 +102,18 @@ When you open the project in your browser, you will see the following page.
 
 
 
-![Alt text](./assets/img/start.png)
+![Alt text](./assets/images/web_cover.png)
 
-When you search the weather  in the search bar, the results will be shown in the right and the data will store in history tab below.
+You can search the book by book name, author name or subjects. After you input the content in search bar and click the search button, you will see the result page.
 
 <p><strong>Example</strong></p>
 
-When Boston is input in the search bar, the following results will be shown. It includes the current weather and 5-day forcasting weather for Boston. In the meantime, the data will be stored in history tab below. Whenever you would like to retrive the historical data, you can click the corresponding date in the history tab.
+When David Grann is input in the search bar and choose by author name in dropdown selection bar, the following results will be shown. It will list at most 40 books for David Grann. If you want to see more information regarding a book, you could simply click the More Info in each card.
 
-![Alt text](./assets/img/example.png)
+![Alt text](/assets/images/example.png)
+
+Result page
+![Alt text](/assets/images/example2.png)
 
 For more details, please refer to the [Documentation](https://github.com/Jason897571/Magical-Book-Browser)
 
@@ -119,8 +122,9 @@ For more details, please refer to the [Documentation](https://github.com/Jason89
 
 <a id="future_additions"></a>
 ## Future Additions
-* Adding google map api to the web
-* optimizing the searching function to auto-fill the city name
+* Refine search results more efficiently
+* Get book recommendations based on user preferences
+* Create a marketplace where users can buy/sell books and other items
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -131,8 +135,11 @@ For more details, please refer to the [Documentation](https://github.com/Jason89
 ## Contact
 
 Jason Gu - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
+Salvatore Mammoliti - [Email](mammoliti.sam@gmail.com) - mammoliti.sam@gmail.com
+Muniba Pervez - [Email](munibaPervez@outlook.com) - munibaPervez@outlook.com
 
-Project Link: [https://github.com/Jason897571/weather-research](https://github.com/Jason897571/Magical-Book-Browser)
+
+Project Link: [https://github.com/Jason897571/Magical-Book-Browser](https://github.com/Jason897571/Magical-Book-Browser)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
