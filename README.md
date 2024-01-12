@@ -3,13 +3,13 @@
 
 <div align="center">
   <a href="https://github.com/Jason897571/Magical-Book-Browser">
-    <img src="./assets/img/icon.png" alt="Logo" width="80" height="80">
+    <img src="./assets/images/logo_02.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Raccoon Weather Forcasting</h3>
+  <h3 align="center">Migical Book Browser</h3>
 
-  <p align="center">
-    This is a tool to get access to the information  <br />about the current and forcasting weather for cities!
+  <p align="left">
+    This is a website dedicated to the world of books. It offers a wide range of genres including Fiction, Science Fiction, Young Adult Fiction, Fantasy, Horror, Crime & Thriller, Children's Literature, and Biographies. <br />The site appears to be designed for book enthusiasts, offering ways to explore and discover books by name, author, or genre. <br />It also provides contact information, including an email address, phone number, and physical address. Additionally, the site encourages visitors to sign up for exclusive insights and early access, and it has options for users to sign in or sign up.  
     <br />
     <a href="https://github.com/Jason897571/Magical-Book-Browser"><strong>Click here for Github Repo  »</strong></a>
     <br />
