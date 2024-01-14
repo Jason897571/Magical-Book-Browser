@@ -88,7 +88,6 @@
 }
 
 #quote-container {
-    /*display: flex;*/
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -263,7 +262,6 @@ main {
 
 .result-container .card {
     height: 300px; 
-    /*overflow: hidden;*/ 
 }
 
 .result-container .code-card img {
@@ -283,13 +281,9 @@ main {
 
 .result-container .card-column {
     flex: 1 0 cal(33.333% - 2rem);
-    margin: 3.5rem;
-   /* max-width: cal(33.333% - 2rem);*/
+    margin: 4.5rem;
     box-sizing: border-box;
-    /*The card overlap with these properties*/
-    /*flex: 1 0 30%; 
-    margin: 1rem; 
-    box-sizing: border-box;*/
+
 }
 
 .result-container .code-block {
@@ -305,7 +299,7 @@ main {
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
-    /*margin-bottom: 8px;*/
+
 }
 
 .result-container .code-card {
@@ -359,9 +353,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /*margin-left: 2.0rem;*/
-    /*margin-right: -2.0rem;*/
-    /*margin: 0 auto;*/
     position: relative;
     margin-top: -40px;
 }
@@ -592,8 +583,25 @@ p{
 }
 
 .result-body{
-    /*background-color: lightcyan;*/
-    background-color: rgba(241, 241, 241, 0.942);
+    background-color: rgba(216, 224, 230, 0.942);
+}
+
+.warning{
+    color: red;
+}
+
+.book-info{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+.more-info-btn{
+    margin-top: 40px;
+    border-radius: 95px;
+}
+
+.more-info-btn:hover{
+    background-color: #e4bc7f;
 }
 
 /*Media Queries*/
