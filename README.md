@@ -6,7 +6,7 @@
     <img src="./assets/images/logo_02.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Migical Book Browser</h3>
+  <h3 align="center"> Magical Book Browser</h3>
 
   <p align="left">
     This is a website dedicated to the world of books. It offers a wide range of genres including Fiction, Science Fiction, Young Adult Fiction, Fantasy, Horror, Crime & Thriller, Children's Literature, and Biographies. <br />The site appears to be designed for book enthusiasts, offering ways to explore and discover books by name, author, or genre. <br />It also provides contact information, including an email address, phone number, and physical address. Additionally, the site encourages visitors to sign up for exclusive insights and early access, and it has options for users to sign in or sign up.  
