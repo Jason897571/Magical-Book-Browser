@@ -136,7 +136,7 @@ For more details, please refer to the [Documentation](https://github.com/Jason89
 
 * Jason Gu - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
 * Salvatore Mammoliti - [Email](mammoliti.sam@gmail.com) - mammoliti.sam@gmail.com
-* Muniba Pervez - [Email](munibaPervez@outlook.com) - munibaPervez@outlook.com
+* Muniba Pervez - [Email](munibapervez596@gmail.com) - munibapervez596@gmail.com
 
 
 Project Link: [https://github.com/Jason897571/Magical-Book-Browser](https://github.com/Jason897571/Magical-Book-Browser)
