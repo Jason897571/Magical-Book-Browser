@@ -144,7 +144,7 @@ sign_up = function(){
 		let user_data = {"email":email_text, "password":password_text}
 
 		// if there are historical sign in data
-		if (is_localstorage_available) {
+		if (is_localstorage_available()) {
             let storedData = localStorage.getItem("user-data");
             let user_data_list = JSON.parse(storedData);
             user_data_list.push(user_data);
