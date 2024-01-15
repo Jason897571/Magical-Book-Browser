@@ -68,7 +68,7 @@ This Project is built with HTML, CSS, Javascript, JQuery and Bulma.
 * [![Alt text](./assets/images/javascript.png)][Javascript-url]
 * [![Alt text](./assets/images/jQuery.png)][jQuery-url]
 * ![Alt text](./assets/images/bulma-logo.png)
-
+* Google Book API and QR Code API
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="getting_started"></a>
@@ -134,9 +134,9 @@ For more details, please refer to the [Documentation](https://github.com/Jason89
 <a id="contact"></a>
 ## Contact
 
-Jason Gu - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
-Salvatore Mammoliti - [Email](mammoliti.sam@gmail.com) - mammoliti.sam@gmail.com
-Muniba Pervez - [Email](munibaPervez@outlook.com) - munibaPervez@outlook.com
+* Jason Gu - [Email](king.gs1314@outlook.com) - king.gs1314@outlook.com
+* Salvatore Mammoliti - [Email](mammoliti.sam@gmail.com) - mammoliti.sam@gmail.com
+* Muniba Pervez - [Email](munibapervez596@gmail.com) - munibapervez596@gmail.com
 
 
 Project Link: [https://github.com/Jason897571/Magical-Book-Browser](https://github.com/Jason897571/Magical-Book-Browser)
